@@ -17,6 +17,9 @@ __pycache__/
 # VSCode settings
 .vscode/
 
-# OSごみ
+# Django DB
+db.sqlite3
+
+# OS-specific Files
 .DS_Store
 Thumbs.db

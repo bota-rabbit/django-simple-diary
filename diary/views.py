@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
+from .models import Diary
 
-# Create your views here.
+class ListView(generic.ListView):
+    model = Diary
+
+class DetailView(generic.DetailView):
+    model = Diary

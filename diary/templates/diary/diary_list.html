@@ -1,0 +1,12 @@
+{% extends 'diary/base.html' %}
+{% block content %}
+
+    <h1>Private Diary</h1>
+    
+    {% for diary in object_list %}
+        <p>{{ diary.title }}</p>
+    {% empty %}
+        <p>まだ日記はありません。</p>
+    {% endfor %}
+
+{% endblock %}
