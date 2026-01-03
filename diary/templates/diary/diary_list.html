@@ -2,11 +2,15 @@
 {% block content %}
 
     <h1> Private Diary </h1>
+
+    <p><a href="{% url 'diary:create' %}"> 新しい日記を書く </a></p>
     
     {% for diary in object_list %}
         <p><a href="{% url 'diary:detail' diary.pk %}"> {{ diary.title }} </a></p>
     {% empty %}
         <p> まだ日記はありません。 </p>
     {% endfor %}
+
+
 
 {% endblock %}

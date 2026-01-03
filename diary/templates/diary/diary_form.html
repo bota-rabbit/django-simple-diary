@@ -1,0 +1,15 @@
+{% extends 'diary/base.html' %}
+{% block content %}
+
+    <h1>{{ object|yesno:'編集,新しい日記'}}</h1>
+    
+    <form action='' method='POST'> {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class='submit'>{{ object|yesno:'更新,作成'}}</button>
+    </form>
+
+    <div>
+        <a href='JavaScript:history.back()' class='btn btn-outline-primary'>&lt; 戻る</a>
+    </div>
+
+{% endblock %}
