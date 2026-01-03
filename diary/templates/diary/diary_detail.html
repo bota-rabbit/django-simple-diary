@@ -1,0 +1,14 @@
+{% extends 'diary/base.html' %}
+{% block content %}
+ 
+    <div>
+        <h1> {{ diary.tital }} </h1>
+        <p> {{ diary.body }} </p>
+    </div>
+
+    <div>
+        <a href='{% url "diary:list" %}'>一覧</a>
+
+    </div>
+
+{% endblock %}
