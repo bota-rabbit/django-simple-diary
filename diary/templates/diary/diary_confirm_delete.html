@@ -1,0 +1,22 @@
+{% extends 'diary/base.html' %}
+{% block content %}
+
+    <h1> Confirm deletion </h1>
+
+    <p> Do you really want to delete ? </p>
+    <form action='' method='POST'> {% csrf_token %}
+        <button type='submit' class='submit delete'> Erase the past </button>
+    </form>
+
+    <div class="diary-title">
+        <h1> {{ diary.title }} </h1>
+    </div>
+    <div class="diary-body">
+        <p> {{ diary.body|linebreaks }} </p>
+    </div>
+
+    <div class='mt-3'>
+        <a href='JavaScript:history.back()' class='btn btn-outline-primary'>&lt; back </a>
+    </div>
+
+{% endblock %}

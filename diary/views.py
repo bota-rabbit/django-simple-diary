@@ -1,6 +1,6 @@
 from django.views import generic
 from .models import Diary
-# from django.urls import reverse_lazy
+from django.urls import reverse_lazy
 
 class ListView(generic.ListView):
     model = Diary
@@ -15,4 +15,14 @@ class CreateView(generic.edit.CreateView):
     fields = ['title', 'body']
     template_name = 'diary/diary_form.html'
     # success_url = reverse_lazy('diary:list')
-        # 作成後の移動先はmodels.py のほうで設定
+        # 作成後の移動先はmodels.py の方で設定
+
+class EditView(generic.edit.UpdateView):
+    model = Diary
+    fields = ['title', 'body']
+    template_name = 'diary/diary_form.html'
+
+class DeleteView(generic.edit.DeleteView):
+    model = Diary
+    template_name = 'diary/diary_confirm_delete.html'
+    success_url = reverse_lazy('diary:list')

@@ -1,14 +1,17 @@
 {% extends 'diary/base.html' %}
 {% block content %}
  
-    <div>
+    <div class="diary-title">
         <h1> {{ diary.title }} </h1>
-        <p> {{ diary.body }} </p>
+    </div>
+    <div class="diary-body">
+        <p> {{ diary.body|linebreaks }} </p>
     </div>
 
-    <div>
-        <a href="{% url 'diary:list' %}">一覧</a>
-
+    <div class="diary-actions">
+        <a href="{% url 'diary:list' %}"> Back to list </a><br>
+        <a href='{% url "diary:edit" diary.pk %}'> Falsification of the past </a><br>
+        <a href='{% url "diary:delete" diary.pk %}'> Erase the past </a>
     </div>
 
 {% endblock %}

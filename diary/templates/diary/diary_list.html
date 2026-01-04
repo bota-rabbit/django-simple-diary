@@ -3,14 +3,12 @@
 
     <h1> Private Diary </h1>
 
-    <p><a href="{% url 'diary:create' %}"> 新しい日記を書く </a></p>
+    <p><a href="{% url 'diary:create' %}"> Spelling a new day </a></p>
     
     {% for diary in object_list %}
         <p><a href="{% url 'diary:detail' diary.pk %}"> {{ diary.title }} </a></p>
     {% empty %}
-        <p> まだ日記はありません。 </p>
+        <p> You weren't born yet </p>
     {% endfor %}
-
-
 
 {% endblock %}
